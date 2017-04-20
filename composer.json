@@ -1,7 +1,7 @@
 {
   "name": "bgkavinga/magento2-patches",
   "description": "Apply core bug fixes using patch files",
-  "version": "2.1.2.0",
+  "version": "2.1.2.1",
   "require": {
     "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",
     "magento/framework": "100.1.*"
