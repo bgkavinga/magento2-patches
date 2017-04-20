@@ -1,0 +1,15 @@
+diff -u -N -re4cfb20a4d7400206588e1f1d6310f810a642194 -rc966dc171b2a18cea3ff36ad545d8810441d3a83
+--- a/vendor/magento/module-catalog-inventory/Helper/Stock.php	(.../Stock.php)	(revision e4cfb20a4d7400206588e1f1d6310f810a642194)
++++ b/vendor/magento/module-catalog-inventory/Helper/Stock.php	(.../Stock.php)	(revision c966dc171b2a18cea3ff36ad545d8810441d3a83)
+@@ -154,7 +154,10 @@
+                 \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+             );
+             $resource = $this->getStockStatusResource();
+-            $resource->addStockDataToCollection($collection, !$isShowOutOfStock);
++            $resource->addStockDataToCollection(
++                $collection,
++                !$isShowOutOfStock && $collection->getFlag('require_stock_items')
++            );
+             $collection->setFlag($stockFlag, true);
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/framework/Setup/FilePermissions.php b/vendor/magento/framework/Setup/FilePermissions.php
+index 1ca91b5..f04f03e 100644
+--- a/vendor/magento/framework/Setup/FilePermissions.php
++++ b/vendor/magento/framework/Setup/FilePermissions.php
+@@ -155,6 +155,8 @@ class FilePermissions
+             ]
+         );
+ 
++        $directoryIterator->setMaxDepth(1);
++
+         $foundNonWritable = false;
+ 
+         try {

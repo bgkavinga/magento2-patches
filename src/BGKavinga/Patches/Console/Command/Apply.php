@@ -9,6 +9,7 @@
 
 namespace BGKavinga\Patches\Console\Command;
 
+use BGKavinga\Patches\Environment;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -35,7 +36,9 @@ class Apply extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        //@TODO To be implemented
+        $env = new Environment();
+        $env->log("Applying magento-cloud-configuration patches.");
+        $env->execute('php ' . Environment::MAGENTO_ROOT . 'vendor/bgkavinga/magento2-patches/patch.php');
     }
 
 }
